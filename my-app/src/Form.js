@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
+import { Button } from 'reactstrap';
 
 const formSchema = yup.object().shape({
   name: yup.string().required("Name is a required field"),
@@ -128,7 +129,7 @@ export default function Form() {
     <div>
       <form onSubmit={formSubmit}>
         <label htmlFor="name">
-          Name:
+          Name:{' '}
           <input
             id="name"
             type="text"
@@ -140,7 +141,7 @@ export default function Form() {
         </label>
         <br />
         <label htmlFor="email">
-          Email:
+          Email:{' '}
           <input
             id="email"
             type="email"
@@ -152,11 +153,12 @@ export default function Form() {
         </label>
         <br />
         <label htmlFor="password">
-          Password:
+          Password:{' '}
           <input
             id="password"
             type="password"
             name="password"
+            value={formState.password}
             onChange={inputChange}
           />
           {errors.password.length > 0 ? errors.password : null}
@@ -173,7 +175,7 @@ export default function Form() {
         </label>
         <br />
         <pre>{JSON.stringify(users, null, 2)}</pre>
-        <button disabled={buttonOn}>Submit</button>
+        <Button color="warning" disabled={buttonOn}>Submit</Button>
       </form>
     </div>
   );

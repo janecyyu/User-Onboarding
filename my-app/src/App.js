@@ -5,6 +5,7 @@ import Form from './Form';
 function App() {
   return (
     <div className="App">
+      <h1>Sign up</h1>
       <Form/>
     </div>
   );
