@@ -175,7 +175,7 @@ export default function Form() {
         </label>
         <br />
         <pre>{JSON.stringify(users, null, 2)}</pre>
-        <Button color="warning" disabled={buttonOn}>Submit</Button>
+        <Button data-cy="submit" color="warning" disabled={buttonOn}>Submit</Button>
       </form>
     </div>
   );
